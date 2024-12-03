@@ -16,7 +16,7 @@ if direction == 'encode':
 
     newletterIndex = []
     for ele in letterIndex:
-        newletterIndex.append(ele + shift)
+        newletterIndex.append((ele + shift)%len(alphabet))
     print(newletterIndex)
 
     outputText = ""
@@ -33,10 +33,11 @@ elif direction == 'decode':
 
     newletterIndex = []
     for ele in letterIndex:
-        newletterIndex.append(ele - shift)
+        newletterIndex.append((ele - shift)%len(alphabet))
     print(newletterIndex)
 
     outputText = ""
     for elem in newletterIndex:
         outputText += alphabet[elem]
     print(outputText)
+    
